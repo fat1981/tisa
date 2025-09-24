@@ -1,0 +1,436 @@
+<!--
+  Archivo: tisa-index-clean.html
+  Generado: 23/09/2025
+  Autor (reemplazar): [lamiaa el frihmat]
+  Nota: pega este archivo tal cual en tu editor. Reemplaza las rutas de imágenes si es necesario.
+-->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TISA - École de Formation en Aviation, Hôtellerie et Croisière</title>
+
+  <!-- Iconos y fuente -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-color:#1a365d;
+      --secondary-color:#e9b44b;
+      --text-color:#171616;
+      --light-bg:#f8f9fa;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color:var(--text-color);line-height:1.6;background:white}
+    img{max-width:100%;display:block}
+    a{color:inherit}
+
+    /* ===== HEADER (logo a la izquierda, título en centro, idiomas a la derecha) ===== */
+    header.site-header{
+      background:var(--primary-color);
+      color:white;
+      position:sticky;
+      top:0;
+      z-index:120;
+      box-shadow:0 2px 10px rgba(0,0,0,0.08);
+    }
+    .container{max-width:1200px;margin:0 auto;padding:0 16px}
+
+    .header-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:12px 0;
+    }
+
+    .header-left{display:flex;align-items:center;gap:12px;min-width:180px}
+    .logo-img{height:64px;width:auto;border-radius:6px}
+    .site-title{font-family:'League Spartan',sans-serif;font-size:20px;font-weight:700;color:white}
+    .site-subtitle{font-size:12px;color:rgba(255,255,255,0.85);margin-top:2px}
+
+    /* NAV (centrado) */
+    .main-nav{flex:1;display:flex;justify-content:center}
+    .main-nav ul{display:flex;gap:34px;list-style:none;align-items:center;padding-left:0}
+    .main-nav a{color:white;text-decoration:none;font-weight:600;font-size:16px;transition:color .18s}
+    .main-nav a:hover{color:var(--secondary-color)}
+
+    /* language */
+    .language-switcher{display:flex;gap:8px}
+    .lang-btn{background:transparent;border:1px solid rgba(255,255,255,0.18);color:white;padding:6px 10px;border-radius:6px;cursor:pointer}
+    .lang-btn.active,.lang-btn:hover{background:white;color:var(--primary-color);border-color:white}
+
+    /* HERO */
+    .hero{
+   min-height: 400px;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
+        url('https://images.unsplash.com/photo-1596726895343-5b2f2b1bff3f?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color:rgb(63, 21, 21);
+      text-align:center;
+      padding:40px 16px;
+    }
+    .hero-inner{max-width:1200px;width:200%;display:flex;gap:20px;align-items:center;justify-content:space-between}
+    .hero-text{flex:1;min-width:280px}
+    .hero-text h1{font-family:'League Spartan';font-size:36px;margin-bottom:12px}
+    .hero-text p{font-size:18px;margin-bottom:8px}
+    .hero-image{flex:1;display:flex;justify-content:center}
+    .imagen-welcome-img {
+   width:100%;
+   max-width:1999px;  /* o incluso 100% para que use todo el espacio */
+   height:auto;  border-radius:60px;box-shadow:0 6px 34px rgba(0,0,0,0.25);object-fit:cover}
+
+
+      
+
+    /* ABOUT */
+    .about-section{background:var(--light-bg);padding:60px 16px}
+    .about-inner{max-width:1200px;margin:0 auto;display:flex;gap:32px;align-items:flex-start;flex-wrap:wrap}
+    .about-image{flex:1;min-width:280px;display:flex;justify-content:center}
+    .about-text{flex:1;min-width:320px}
+    .about-text h2{color:var(--primary-color);font-size:22px;margin-bottom:12px}
+    .about-text h3{color:var(--primary-color);margin-top:16px;margin-bottom:8px}
+    .about-text p{margin-bottom:12px}
+
+    /* PROGRAMS */
+    .programs-section{padding:60px 16px}
+    .section-title{text-align:center;color:var(--primary-color);margin-bottom:26px;font-size:22px}
+    .programs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;max-width:1200px;margin:0 auto}
+    .program-card{background:white;border-radius:10px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,0.08);display:flex;flex-direction:column}
+    .program-image-container{height:180px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+    .program-image{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+    .program-card:hover .program-image{transform:scale(1.05)}
+    .program-content{padding:18px;flex:1;display:flex;flex-direction:column}
+    .program-content h3{color:var(--primary-color);margin-bottom:8px}
+    .program-content p{flex:1}
+
+    /* VIDEO */
+    .video-section{padding:40px 16px;text-align:center}
+    .video-container{display:flex;justify-content:center}
+    .video-container video{width:100%;max-width:900px;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,0.12)}
+
+    /* FOOTER */
+    footer{background:var(--primary-color);color:white;padding:36px 16px}
+    .footer-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between}
+    .footer-section{min-width:220px;flex:1}
+    .footer-section h3{margin-bottom:8px}
+    .footer-section p,a{color:#e6e6e6;text-decoration:none;margin-bottom:8px;display:block}
+    .social-icons{display:flex;gap:10px}
+    .social-icons a{width:38px;height:38px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.08);color:white}
+    .copyright{margin-top:18px;border-top:1px solid rgba(255,255,255,0.08);padding-top:14px;text-align:center;color:#ddd}
+
+    /* RTL adjustments */
+    body.rtl { direction: rtl; }
+    body.rtl .header-row { flex-direction:row-reverse }
+    body.rtl .main-nav ul { direction: rtl }
+    body.rtl .about-inner { direction: rtl }
+
+    /* Responsive */
+    @media(max-width:900px){
+      .hero-inner{flex-direction:column-reverse;text-align:center}
+      .header-row{align-items:center}
+      .site-title{font-size:18px}
+      .logo-img{height:52px}
+    }
+    @media(max-width:520px){
+      .main-nav{display:none} /* simplificar para móvil; puedes añadir un menú hamburguesa si quieres */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="header-row">
+        <!-- Logo + nombre (primer margen) -->
+        <div class="header-left" title="Training International School Aviation">
+          <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:white">
+            <!-- Asegúrate de que la imagen exista en esta ruta: img/img/logo.png -->
+            <img class="logo-img" src="img/logo.png"   alt=" "   class="logo " > 
+            <div>
+              <div class="site-title">Training International School Aviation</div>
+              <div class="site-subtitle" data-fr="École de Formation en Aviation, Hôtellerie et Croisière" data-ar="مدرسة التدريب في الطيران والفندقة والرحلات البحرية">École de Formation en Aviation, Hôtellerie et Croisière</div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Navegación (centrada) -->
+        <nav class="main-nav" role="navigation" aria-label="Main">
+          <ul>
+            <li><a href="#hero" data-fr="Accueil" data-ar="الرئيسية">Accueil</a></li>
+            <li><a href="#about" data-fr="À propos" data-ar="من نحن">À propos</a></li>
+            <li><a href="#programs" data-fr="Formations" data-ar="الدورات">Formations</a></li>
+            <li><a href="#contact" data-fr="Contact" data-ar="اتصل بنا">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Switch idioma (derecha) -->
+        <div class="language-switcher" aria-hidden="false">
+          <button id="lang-fr" class="lang-btn" aria-pressed="true">FR</button>
+          <button id="lang-ar" class="lang-btn" aria-pressed="false">AR</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero" class="hero" role="region" aria-label="Hero">
+    <div class="hero-inner container">
+      <div class="hero-text">
+        <h1 data-fr="La formation qui transformera ta vie" data-ar="التدريب الذي سيغير حياتك">La formation qui transformera ta vie</h1>
+        <p data-fr="APPRENDS AVEC LES MEILLEURS PROFESSIONNELS" data-ar="تعلم مع أفضل المحترفين">APPRENDS AVEC LES MEILLEURS PROFESSIONNELS</p>
+        <p data-fr="ET REJOINS TISA." data-ar="وانضم إلى TISA">ET REJOINS TISA.</p>
+      </div>
+
+      <div class="hero-image">
+        <!-- Imagen lateral del hero (usa tu imagen: img/img/welcom2.png) -->
+        <img src="img/welcom.png" alt="Foto de bienvenida" class="imagen-welcome-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT (con todo el texto que proporcionaste) -->
+  <section id="about" class="about-section" role="region" aria-label="About">
+    <div class="about-inner container">
+      <div class="about-image">
+        <img src="img/welcom2.png"TISA École - imagen">
+      </div>
+
+      <div class="about-text">
+        <h2 data-fr="EXPERTS EN FORMATION TOURISTIQUE ET AÉRONAUTIQUE" data-ar="خبراء في التدريب السياحي والطيران">EXPERTS EN FORMATION TOURISTIQUE ET AÉRONAUTIQUE</h2>
+
+        <h3 data-fr="Bienvenue chez TISA" data-ar="مرحبًا بكم في TISA">Bienvenue chez TISA</h3>
+        <p data-fr="Training International School Aviation, basée à Tétouan, est une école de référence dans la formation touristique et aéronautique." data-ar="Training International School Aviation، ومقرها تطوان، هي مدرسة مرجعية في التدريب السياحي والطيران.">
+          Training International School Aviation, basée à Tétouan, est une école de référence dans la formation touristique et aéronautique.
+        </p>
+
+        <p data-fr="Chaque jour, nous travaillons pour proposer des programmes modernes et innovants, adaptés aux exigences du marché actuel." data-ar="كل يوم، نعمل على تقديم برامج حديثة ومبتكرة، تتلاءم مع متطلبات السوق الحالية.">
+          Chaque jour, nous travaillons pour proposer des programmes modernes et innovants, adaptés aux exigences du marché actuel.
+        </p>
+
+        <p data-fr="Nos formations offrent de multiples débouchés professionnels et favorisent une insertion rapide dans le mundo du travail, grâce à des stages pratiques au sein des entreprises les plus reconnues du secteur touristique et aéronautique." data-ar="تقدم دوراتنا التدريبية فرص عمل متعددة وتسهل الدخول السريع إلى عالم العمل، وذلك بفضل فترات التدريب العملي في أكثر الشركات المعترف بها في القطاعين السياحي والطيران.">
+          Nos formations offrent de multiples débouchés professionnels et favorisent une insertion rapide dans le mundo du travail, grâce à des stages pratiques au sein des entreprises les plus reconnues du secteur touristique et aéronautique.
+        </p>
+
+        <h3 data-fr="UN ENSEIGNEMENT PROCHE ET PRATIQUE" data-ar="تعليم قريب وعملي">UN ENSEIGNEMENT PROCHE ET PRATIQUE</h3>
+        <p data-fr="Au-delà de l'employabilité, notre modèle pédagogique se distingue par la proximité et l'expérience de nos formateurs, tous professionnels en activité." data-ar="بالإضافة إلى القابلية للتوظيف، يتميز نموذجنا التعليمي بقرب وخبرة مدربينا، وهم جميعًا محترفون نشطون.">
+          Au-delà de l'employabilité, notre modèle pédagogique se distingue par la proximité et l'expérience de nos formateurs, tous professionnels en activité.
+        </p>
+
+        <p data-fr="Ils vous guideront dans un apprentissage créatif, simple et concret, pour que vous soyez prêt à relever les défis de votre carrière." data-ar="سيرشدونك في تعلم إبداعي وبسيط وملموس، حتى تكون مستعدًا لمواجهة تحديات مسارك المهني.">
+          Ils vous guideront dans un apprentissage créatif, simple et concret, pour que vous soyez prêt à relever les défis de votre carrière.
+        </p>
+
+        <h3 data-fr="DÉCOUVREZ TISA" data-ar="اكتشف TISA">DÉCOUVREZ TISA</h3>
+        <p data-fr="Découvrez une école spécialisée dans la construction de l'avenir." data-ar="اكتشف مدرسة متخصصة في بناء المستقبل.">Découvrez une école spécialisée dans la construction de l'avenir.</p>
+        <p data-fr="Découvrez TISA." data-ar="اكتشف TISA">Découvrez TISA.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMS (las 4 tarjetas como en tu original) -->
+  <section id="programs" class="programs-section" role="region" aria-label="Programs">
+    <h2 class="section-title" data-fr="Nos Formations" data-ar="برامجنا التدريبية">Nos Formations</h2>
+
+    <div class="programs-grid container" aria-live="polite">
+      <!-- Card 1 -->
+      <div class="program-card">
+        <div class="program-image-container">
+          <img src="img/img2.png" alt="Formation PNC" class="program-image">
+        </div>
+        <div class="program-content">
+          <h3 data-fr="Cours d'Hôtesse de l'Air, Steward ou Membre d'Équipage de Cabine (PNC)" data-ar="دورة مضيفة طيران، مضيف أو عضو طاقم المقصورة (PNC)">
+            Cours d'Hôtesse de l'Air, Steward ou Membre d'Équipage de Cabine (PNC)
+          </h3>
+          <p data-fr="Formation officielle agréée par le Ministère des Transports, permettant d'exercer une activité professionnelle dans les compagnies aériennes, les aéroports ou encore dans les services ferroviaires." data-ar="تدريب رسمي معتمد من وزارة النقل، يسمح بممارسة نشاط مهني في شركات الطيران أو المطارات أو حتى خدمات السكك الحديدية.">
+            Formation officielle agréée par le Ministère des Transports, permettant d'exercer une activité professionnelle dans les compagnies aériennes, les aéroports ou encore dans les services ferroviaires.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="program-card">
+        <div class="program-image-container">
+          <img src="img/img6.png" alt="Formation TAC" class="program-image">
+        </div>
+        <div class="program-content">
+          <h3 data-fr="Cours de Membre d'Équipage et Service aux Passagers sur Croisières (TAC)" data-ar="دورة عضو الطاقم وخدمة الركاب في الرحلات البحرية (TAC)">
+            Cours de Membre d'Équipage et Service aux Passagers sur Croisières (TAC)
+          </h3>
+          <p data-fr="Destiné à tous ceux qui souhont travailler comme membre d'équipage, hôtesse de bord ou assistant de navire, à bord d'un croisière ou d'un ferry." data-ar="مخصص لكل من يرغب في العمل كعضو طاقم، مضيفة طيران أو مساعد سفينة، على متن سفينة سياحية أو عبارة.">
+            Destiné à tous ceux qui souhont travailler comme membre d'équipage, hôtesse de bord ou assistant de navire, à bord d'un croisière ou d'un ferry.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="program-card">
+        <div class="program-image-container">
+          <img src="img/img5.png"Réceptionniste d'Hôtel" class="program-image">
+        </div>
+        <div class="program-content">
+          <h3 data-fr="Cours de Réceptionniste d'Hôtel" data-ar="دورة موظف استقبال الفندق">Cours de Réceptionniste d'Hôtel</h3>
+          <p data-fr="Le cours de Réceptionniste d'Hôtel est la meilleure formation pour travailler en contact direct avec le public dans le secteur touristique, offrant toutes les compétences nécessaires pour accueillir, orienter et satisfaire les clients dans un environnement hôtelier." data-ar="تعد دورة موظف استقبال الفندق أفضل تدريب للعمل في اتصال مباشر مع الجمهور في القطاع السياحي، حيث تقدم جميع المهارات اللازمة لاستقبال وتوجيه وإرضاء العملاء في بيئة فندقية.">
+            Le cours de Réceptionniste d'Hôtel est la meilleure formation pour travailler en contact direct avec le public dans le secteur touristique, offrant toutes les compétences nécessaires pour accueillir, orienter et satisfaire les clients dans un environnement hôtelier.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="program-card">
+        <div class="program-image-container">
+          <img src="img/img7.png" alt="Auxiliaire Touristique" class="program-image">
+        </div>
+        <div class="program-content">
+          <h3 data-fr="Cours d'Auxiliaire Touristique (AT)" data-ar="دورة المساعد السياحي (AT)">Cours d'Auxiliaire Touristique (AT)</h3>
+          <p data-fr="Le cours d'Auxiliaire Touristique est la formation idéale pour travailler en contact direct avec le public dans le secteur touristique : croisières, hôtels, congrès, musées, visites guidées, salons et expositions." data-ar="تعد دورة المساعد السياحي التدريب المثالي للعمل في اتصال مباشر مع الجمهور في القطاع السياحي: الرحلات البحرية، الفنادق، المؤتمرات، المتاحف، الزيارات الإرشادية، المعارض والعروض.">
+            Le cours d'Auxiliaire Touristique est la formation idéale pour travailler en contact direct avec le public dans le secteur touristique : croisières, hôtels, congrès, musées, visites guidées, salons et expositions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section class="video-section" role="region" aria-label="Video presentation">
+    <h2 class="video-title" data-fr="Présentation en Vidéo" data-ar="عرض الفيديو"> Présentation en Vidéo</h2>
+    <div class="video-container">
+      <video controls>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        <!-- Texto alternativo si no soporta video -->
+        Votre navigateur ne supporte pas la lecture de vidéos.
+      </video>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact" role="contentinfo">
+    <div class="footer-inner container">
+      <div class="footer-section">
+        <h3 data-fr="Training International School Aviation" data-ar="مدرسة التدريب الدولي للطيران">Training International School Aviation</h3>
+        <p data-fr="École de Formation en Aviation, Hôtellerie et Croisière" data-ar="مدرسة التدريب في الطيران والفندقة والرحلات البحرية">École de Formation en Aviation, Hôtellerie et Croisière</p>
+        <p data-fr="Tétouan, Maroc" data-ar="تطوان، المغرب">Tétouan, Maroc</p>
+      </div>
+
+      <div class="footer-section">
+        <h3 data-fr="Contactez-nous" data-ar="اتصل بنا">Contactez-nous</h3>
+        <p>Email: contact@tisa.ma</p>
+        <p data-fr="Téléphone: +212 5 39 99 99 99" data-ar="الهاتف: 212 5 39 99 99 99+">Téléphone: +212 5 39 99 99 99</p>
+      </div>
+
+      <div class="footer-section">
+        <h3 data-fr="Suivez-nous" data-ar="تابعنا">Suivez-nous</h3>
+        <div class="social-icons">
+          <a href="https://facebook.com/TISA" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://instagram.com/TISA" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/212539999999" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://youtube.com/TISA" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+          <a href="https://tiktok.com/@TISA" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright container">
+      <p>&copy; <span id="year"></span> Training International School Aviation. <span data-fr="Tous droits réservés." data-ar="جميع الحقوق محفوظة.">Tous droits réservés.</span></p>
+      <!-- Lugar para poner nombre del creador (reemplaza [Nombre del creador]) -->
+      <p data-fr="Créé par: [Nom du créateur]" data-ar="تم الإنشاء بواسطة: [اسم المبدع]">Créé par: [Nom du créateur]</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS (traducción y comportamiento) -->
+  <script>
+    /* Traducciones - tu snippet original (he corregido la sintaxis) */
+    const translations = {
+      fr: {
+        nav_home: "Accueil",
+        nav_about: "À propos",
+        nav_programs: "Formations",
+        nav_contact: "Contact"
+      },
+      ar: {
+        nav_home: "الرئيسية",
+        nav_about: "من نحن",
+        nav_programs: "الدورات",
+        nav_contact: "اتصل بنا"
+      }
+    };
+
+    // Cambia idioma y actualiza textos
+    function changeLanguage(lang) {
+      // botones
+      document.getElementById('lang-fr').classList.toggle('active', lang === 'fr');
+      document.getElementById('lang-ar').classList.toggle('active', lang === 'ar');
+
+      // RTL
+      if (lang === 'ar') {
+        document.body.classList.add('rtl');
+        document.body.setAttribute('dir', 'rtl');
+      } else {
+        document.body.classList.remove('rtl');
+        document.body.removeAttribute('dir');
+      }
+
+      // Elementos con data-fr / data-ar
+      document.querySelectorAll('[data-fr][data-ar]').forEach(el => {
+        el.textContent = el.getAttribute('data-' + lang);
+      });
+
+      // Asegurar que los enlaces del nav estén actualizados (por si usas translations)
+      const navLinks = document.querySelectorAll('.main-nav ul li a');
+      if (navLinks && navLinks.length >= 4) {
+        navLinks[0].textContent = translations[lang].nav_home;
+        navLinks[1].textContent = translations[lang].nav_about;
+        navLinks[2].textContent = translations[lang].nav_programs;
+        navLinks[3].textContent = translations[lang].nav_contact;
+      }
+
+      // Cambiar logo si tienes logo-ar
+      const logoImage = document.querySelector('.logo-img');
+      if (logoImage) {
+        // rutas por defecto; cámbialas si tus archivos están en otra carpeta
+        logoImage.src = (lang === 'ar') ? 'img/logo-ar.png' : 'img/logo.png';
+      }
+
+      localStorage.setItem('preferredLanguage', lang);
+    }
+
+    // Smooth scroll para links internos
+    function initSmoothScroll() {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const targetId = this.getAttribute('href');
+          if (targetId && targetId !== '#') {
+            e.preventDefault();
+            const target = document.querySelector(targetId);
+            if (target) target.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+    }
+
+    // Inicialización
+    document.addEventListener('DOMContentLoaded', function () {
+      // Año automático en el footer
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Lenguaje inicial (guarda preferencia si existe)
+      const saved = localStorage.getItem('preferredLanguage');
+      const browserLang = navigator.language && navigator.language.startsWith('ar') ? 'ar' : 'fr';
+      const initial = saved || browserLang;
+      changeLanguage(initial);
+
+      document.getElementById('lang-fr').addEventListener('click', () => changeLanguage('fr'));
+      document.getElementById('lang-ar').addEventListener('click', () => changeLanguage('ar'));
+
+      initSmoothScroll();
+    });
+  </script>
+</body>
+</html>
